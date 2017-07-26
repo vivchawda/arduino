@@ -87,15 +87,11 @@ public:
 	} data;
 
 	//overload the constructor to account for all the types and sizes
-	OSCData(const char * s);
-#if defined(__SAM3X8E__)
-	OSCData (int16_t);
-#endif
-	OSCData (int32_t);
-#ifndef ESP8266
+	//OSCData(const char * s);
+
     OSCData (int);
-#endif
-    OSCData (unsigned int);
+
+    //OSCData (unsigned int);
 	OSCData (float);
 	OSCData (double);
 	OSCData (uint8_t *, int);

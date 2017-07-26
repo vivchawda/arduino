@@ -10,7 +10,7 @@ osctime_t zerotime = {0,0};
 	set the type flag, the size (in bytes), and the data
 =============================================================================*/
 
-
+/*
 OSCData::OSCData(const char * s){
 	error = OSC_OK;
 	type = 's';
@@ -24,38 +24,25 @@ OSCData::OSCData(const char * s){
 		data.s = mem;
 	}
 }
+*/
 
 
-
-
+/*
 OSCData::OSCData(int32_t i){
 	error = OSC_OK;
 	type = 'i';
 	bytes = 4;
 	data.i = i;
 }
-#ifndef ESP8266
+*/
+
 OSCData::OSCData(int i){
 	error = OSC_OK;
 	type = 'i';
 	bytes = 4;
 	data.i = i;
 }
-#endif
-OSCData::OSCData(unsigned int i){
-	error = OSC_OK;
-	type = 'i';
-	bytes = 4;
-	data.i = i;
-}
-#if defined(__SAM3X8E__)
-OSCData::OSCData(int16_t i){
-	error = OSC_OK;
-	type = 'i';
-	bytes = 4;
-	data.i = i;
-}
-#endif
+
 
 OSCData::OSCData(float f){
 	error = OSC_OK;
@@ -70,6 +57,7 @@ OSCData::OSCData(osctime_t t){
 	bytes = 8;
 	data.time = t;
 }
+
 OSCData::OSCData(boolean b){
 	error = OSC_OK;
 	type = b?'T':'F';
